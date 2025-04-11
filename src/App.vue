@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <!-- Home Page -->
     <div v-if="currentPage === 'home'" class="menu-container">
       <div class="header">
         <div class="left-nav">
@@ -23,11 +24,34 @@
       </div>
     </div>
 
-    <div v-else-if="currentPage === 'about'" class="content-card">
-      <h1>About Page</h1>
+    <!-- About Page -->
+    <div v-else-if="currentPage === 'about'" class="menu-container">
       <button class="back-button" @click="goTo('home')">Back</button>
+
+      <div class="text-center">
+        <h3>Game Name</h3>
+      </div>
+
+      <div class="main-content">
+        <div class="about-game-left">
+          <div class="game-label">Game Image</div>
+        </div>
+        <div class="about-game-center">
+          <div class="game-label">Game Image</div>
+        </div>
+        <div class="about-game-right">
+          <div class="game-label">Game Image</div>
+        </div>
+      </div>
+
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+      </div>
+
+      <button class="play">Play</button>
     </div>
 
+    <!-- Developers Page -->
     <div v-else-if="currentPage === 'developers'" class="content-card">
       <div class="small-rectangles">
         <div class="small-rectangle">
@@ -64,10 +88,10 @@ export default {
       this.currentPage = page;
     },
     prev() {
-      // prev game
+      // prev game logic
     },
     next() {
-      //  next game
+      // next game logic
     }
   }
 }
@@ -91,6 +115,123 @@ body, html, #app {
   text-align: center;
   font-family: sans-serif;
 }
+
+.menu-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: #7572a1;
+  font-size: 1.2em;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  color: #c51878;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.game-box {
+  background: #dcdcdc;
+  color: black;
+  padding: 20px;
+  margin: 0 20px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-a {
+  background: #3a2c91;
+  border-radius: 50%;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.genre {
+  font-size: 1.5em;
+}
+
+.genre-name {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #88aaff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #1E1E1E;
+}
+
+/* About Page Boxes */
+
+.about-game-left, .about-game-center, .about-game-right {
+  background: #dcdcdc;
+  color: black;
+  padding: 20px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-game-left, .about-game-right {
+  width: 75px;
+  height: 25px;
+}
+
+.about-game-center {
+  width: 200px;
+  height: 100px;
+}
+
+.play {
+  background: #C42577;
+  color: white;
+  font-size: xx-large;
+  width: 150px;
+  height: 75px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* Developer Page */
 
 .content-card {
   background-color: #40519D;
@@ -135,87 +276,5 @@ body, html, #app {
 .dev-desc {
   flex: 1;
   text-align: center;
-}
-
-.back-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #88aaff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  color: #1E1E1E;
-}
-
-.menu-container {
-  padding: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  color: #7572a1;
-  font-size: 1.2em;
-}
-
-.left-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.nav-item {
-  cursor: pointer;
-}
-
-.main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 40px 0;
-}
-
-.arrow {
-  background: none;
-  border: none;
-  color: #c51878;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-.game-box {
-  background: #dcdcdc;
-  color: black;
-  padding: 20px;
-  margin: 0 20px;
-  position: relative;
-  width: 200px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.button-a {
-  background: #3a2c91;
-  border-radius: 50%;
-  color: white;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.genre {
-  font-size: 1.5em;
-}
-
-.genre-name {
-  font-size: 2em;
-  font-weight: bold;
-  margin-top: 10px;
 }
 </style>
