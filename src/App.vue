@@ -32,17 +32,17 @@
       <div class="small-rectangles">
         <div class="small-rectangle">
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/Travis.jpg" class="dev-img">
-          <p class="dev-desc">Developer 1: Skilled in Frontend Development</p>
+          <p class="dev-desc">Travis: A passionate and creative game developer</p>
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR1.png" class="dev-img">
         </div>
         <div class="small-rectangle">
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/BuffTravis.jpg" class="dev-img">
-          <p class="dev-desc">Developer 2: Expert in Backend Technologies</p>
+          <p class="dev-desc">Buff Travis: Travis but so buff it looks fake</p>
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR2.png" class="dev-img">
         </div>
         <div class="small-rectangle">
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/image-2.png" class="dev-img">
-          <p class="dev-desc">Developer 3: UI/UX Designer</p>
+          <p class="dev-desc">Saaf Sivart: The evil version of Travis</p>
           <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR3.png" class="dev-img">
         </div>
       </div>
@@ -64,10 +64,10 @@ export default {
       this.currentPage = page;
     },
     prev() {
-      // Add logic for previous game
+      // prev game
     },
     next() {
-      // Add logic for next game
+      //  next game
     }
   }
 }
