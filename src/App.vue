@@ -1,12 +1,23 @@
 <template>
   <div class="app-container">
     <div class="content-card">
-    
+      <div v-if="currentPage === 'home'">
+        <button class="nav-button" @click="currentPage = 'about'">About</button>
+        <button class="nav-button" @click="currentPage = 'developers'">Developers</button>
+      </div>
+      
+      <div v-if="currentPage === 'about'">
+        <h2 class="page-title">About Page</h2>
+        <button class="nav-button" @click="currentPage = 'home'">Back</button>
+      </div>
 
-      <div class="small-rectangles">
-        <div class="small-rectangle"></div>
-        <div class="small-rectangle"></div>
-        <div class="small-rectangle"></div>
+      <div v-if="currentPage === 'developers'">
+        <div class="small-rectangles">
+          <div class="small-rectangle"></div>
+          <div class="small-rectangle"></div>
+          <div class="small-rectangle"></div>
+        </div>
+        <button class="nav-button" @click="currentPage = 'home'">Back</button>
       </div>
     </div>
   </div>
@@ -14,7 +25,12 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data() {
+    return {
+      currentPage: 'home'
+    }
+  }
 }
 </script>
 
@@ -25,7 +41,6 @@ body, html, #app {
   height: 100%;
 }
 
-/* Gradient Background */
 .app-container {
   height: 100vh;
   width: 100vw;
@@ -35,7 +50,6 @@ body, html, #app {
   background: linear-gradient(to bottom, #1E1E1E, #251C53);
 }
 
-/* Centered Rectangle (Card) */
 .content-card {
   background-color: #40519D;
   padding: 2rem;
@@ -49,7 +63,6 @@ body, html, #app {
   justify-content: center;
 }
 
-/* Container for small rectangles */
 .small-rectangles {
   display: flex;
   flex-direction: column;
@@ -59,12 +72,32 @@ body, html, #app {
   margin-top: 1rem;
 }
 
-/* Individual small rectangles */
 .small-rectangle {
   width: 80%;
   height: 100px;
   background-color: #1E1E1E;
   border-radius: 0.5rem;
+}
+
+.nav-button {
+  margin: 1rem;
+  padding: 12px 24px;
+  background-color: #8EBBFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #6b9de0;
+}
+
+.page-title {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 2rem;
 }
 </style>
 
