@@ -1,24 +1,52 @@
 <template>
   <div class="app-container">
-    <div class="content-card">
-      <div v-if="currentPage === 'home'">
-        <button class="nav-button" @click="currentPage = 'about'">About</button>
-        <button class="nav-button" @click="currentPage = 'developers'">Developers</button>
-      </div>
-      
-      <div v-if="currentPage === 'about'">
-        <h2 class="page-title">About Page</h2>
-        <button class="nav-button" @click="currentPage = 'home'">Back</button>
+    <div v-if="currentPage === 'home'" class="menu-container">
+      <div class="header">
+        <div class="left-nav">
+          <span class="nav-item" @click="goTo('about')">About</span>
+        </div>
+        <span class="nav-item right" @click="goTo('developers')">Devs</span>
       </div>
 
-      <div v-if="currentPage === 'developers'">
-        <div class="small-rectangles">
-          <div class="small-rectangle"></div>
-          <div class="small-rectangle"></div>
-          <div class="small-rectangle"></div>
+      <div class="main-content">
+        <button class="arrow" @click="prev">&#8592;</button>
+        <div class="game-box">
+          <div class="button-a">A</div>
+          <div class="game-label">Game</div>
         </div>
-        <button class="nav-button" @click="currentPage = 'home'">Back</button>
+        <button class="arrow" @click="next">&#8594;</button>
       </div>
+
+      <div class="genre">
+        <div>Game Genre: Action</div>
+        <div class="genre-name">Developer: Lorem Ipsum</div>
+      </div>
+    </div>
+
+    <div v-else-if="currentPage === 'about'" class="content-card">
+      <h1>About Page</h1>
+      <button class="back-button" @click="goTo('home')">Back</button>
+    </div>
+
+    <div v-else-if="currentPage === 'developers'" class="content-card">
+      <div class="small-rectangles">
+        <div class="small-rectangle">
+          <img src="https://via.placeholder.com/150" class="dev-img">
+          <p class="dev-desc">Developer 1: Skilled in Frontend Development</p>
+          <img src="https://via.placeholder.com/150" class="dev-img">
+        </div>
+        <div class="small-rectangle">
+          <img src="https://via.placeholder.com/150" class="dev-img">
+          <p class="dev-desc">Developer 2: Expert in Backend Technologies</p>
+          <img src="https://via.placeholder.com/150" class="dev-img">
+        </div>
+        <div class="small-rectangle">
+          <img src="https://via.placeholder.com/150" class="dev-img">
+          <p class="dev-desc">Developer 3: UI/UX Designer</p>
+          <img src="https://via.placeholder.com/150" class="dev-img">
+        </div>
+      </div>
+      <button class="back-button" @click="goTo('home')">Back</button>
     </div>
   </div>
 </template>
@@ -29,6 +57,17 @@ export default {
   data() {
     return {
       currentPage: 'home'
+    }
+  },
+  methods: {
+    goTo(page) {
+      this.currentPage = page;
+    },
+    prev() {
+      // Add logic for previous game
+    },
+    next() {
+      // Add logic for next game
     }
   }
 }
@@ -48,6 +87,9 @@ body, html, #app {
   justify-content: center;
   align-items: center;
   background: linear-gradient(to bottom, #1E1E1E, #251C53);
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
 }
 
 .content-card {
@@ -56,11 +98,10 @@ body, html, #app {
   border-radius: 1rem;
   height: 550px;
   width: 800px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .small-rectangles {
@@ -79,25 +120,85 @@ body, html, #app {
   border-radius: 0.5rem;
 }
 
-.nav-button {
-  margin: 1rem;
-  padding: 12px 24px;
-  background-color: #8EBBFF;
-  color: white;
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #88aaff;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #1E1E1E;
+}
+
+.menu-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: #7572a1;
+  font-size: 1.2em;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-item {
   cursor: pointer;
 }
 
-.nav-button:hover {
-  background-color: #6b9de0;
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
 }
 
-.page-title {
+.arrow {
+  background: none;
+  border: none;
+  color: #c51878;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.game-box {
+  background: #dcdcdc;
+  color: black;
+  padding: 20px;
+  margin: 0 20px;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-a {
+  background: #3a2c91;
+  border-radius: 50%;
   color: white;
-  font-size: 24px;
-  margin-bottom: 2rem;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.genre {
+  font-size: 1.5em;
+}
+
+.genre-name {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 10px;
 }
 </style>
-
