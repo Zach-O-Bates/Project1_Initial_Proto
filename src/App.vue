@@ -31,19 +31,19 @@
     <div v-else-if="currentPage === 'developers'" class="content-card">
       <div class="small-rectangles">
         <div class="small-rectangle">
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/Travis.jpg" class="dev-img">
           <p class="dev-desc">Developer 1: Skilled in Frontend Development</p>
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR1.png" class="dev-img">
         </div>
         <div class="small-rectangle">
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/BuffTravis.jpg" class="dev-img">
           <p class="dev-desc">Developer 2: Expert in Backend Technologies</p>
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR2.png" class="dev-img">
         </div>
         <div class="small-rectangle">
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/image-2.png" class="dev-img">
           <p class="dev-desc">Developer 3: UI/UX Designer</p>
-          <img src="https://via.placeholder.com/150" class="dev-img">
+          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR3.png" class="dev-img">
         </div>
       </div>
       <button class="back-button" @click="goTo('home')">Back</button>
@@ -114,10 +114,27 @@ body, html, #app {
 }
 
 .small-rectangle {
-  width: 80%;
-  height: 100px;
+  width: 600px;
+  min-height: 150px;
   background-color: #1E1E1E;
   border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.dev-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.dev-desc {
+  flex: 1;
+  text-align: center;
 }
 
 .back-button {
