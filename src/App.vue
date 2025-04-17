@@ -55,22 +55,23 @@
     <div v-else-if="currentPage === 'developers'" class="content-card">
       <div class="small-rectangles">
         <div class="small-rectangle">
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/Travis.jpg" class="dev-img">
+          <img src="/public/Travis.jpg" class="dev-img">
           <p class="dev-desc">Travis: A passionate and creative game developer</p>
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR1.png" class="dev-img">
+          <img src="/public/QR1.png" class="dev-img">
         </div>
         <div class="small-rectangle">
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/BuffTravis.jpg" class="dev-img">
+          <img src="/public/BuffTravis.jpg" class="dev-img">
           <p class="dev-desc">Buff Travis: Travis but so buff it looks fake</p>
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR2.png" class="dev-img">
+          <img src="/public/QR2.png" class="dev-img">
         </div>
         <div class="small-rectangle">
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/image-2.png" class="dev-img">
+          <img src="/public/image-2.png" class="dev-img">
           <p class="dev-desc">Saaf Sivart: The evil version of Travis</p>
-          <img src="/Users/zacharybates/Desktop/Vue/Project1_Initial_Proto/public/QR3.png" class="dev-img">
+          <img src="/public/QR3.png" class="dev-img">
         </div>
+        <button class="back-button" @click="goTo('home')">Back</button>
       </div>
-      <button class="back-button" @click="goTo('home')">Back</button>
+      
     </div>
   </div>
 </template>
@@ -189,12 +190,13 @@ body, html, #app {
 
 .back-button {
   margin-bottom: 20px;
-  padding: 10px 20px;
+  padding: 40px 100px;
   background-color: #88aaff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   color: #1E1E1E;
+  font-size: x-large;
 }
 
 /* About Page Boxes */
@@ -237,8 +239,8 @@ body, html, #app {
   background-color: #40519D;
   padding: 2rem;
   border-radius: 1rem;
-  height: 550px;
-  width: 800px;
+  height: 900px;
+  width: 1600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -255,7 +257,7 @@ body, html, #app {
 }
 
 .small-rectangle {
-  width: 600px;
+  width: 1250px;
   min-height: 150px;
   background-color: #1E1E1E;
   border-radius: 0.5rem;
@@ -267,14 +269,15 @@ body, html, #app {
 }
 
 .dev-img {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 0.5rem;
 }
 
 .dev-desc {
   flex: 1;
+  font-size: xx-large;
   text-align: center;
 }
 </style>
