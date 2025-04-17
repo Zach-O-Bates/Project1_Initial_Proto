@@ -11,7 +11,7 @@
 
       <div class="main-content">
         <button class="arrow" @click="prev">&#8592;</button>
-        <div class="game-box">
+        <div class="game-box" @click="goTo('gameDesc')">
           <div class="button-a">A</div>
           <div class="game-label">Game</div>
         </div>
@@ -26,6 +26,56 @@
 
     <!-- About Page -->
     <div v-else-if="currentPage === 'about'" class="menu-container">
+      <button class="about-back-button" @click="goTo('home')">Back</button>
+      <div class="about-page">
+        <div class="about-title">
+          <h1>About the Cabinet</h1>
+        </div>
+
+        <div class="about-description">
+          <div class="about-content"> 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+          </div>
+
+          <div class="about-photo">
+            <div class="game-label">Image</div>
+          </div>
+
+        </div>
+
+        <div class="about-description">
+          <div class="about-content-long"> 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+          </div>
+        </div>
+
+        <div class="about-description">
+
+          <div class="about-photo">
+            <div class="game-label">Image</div>
+          </div>
+
+          <div class="about-content"> 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. 
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+            Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.
+          </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Game Description -->
+
+    <div v-else-if="currentPage === 'gameDesc'" class="menu-container">
       <button class="back-button" @click="goTo('home')">Back</button>
 
       <div class="text-center">
@@ -33,13 +83,13 @@
       </div>
 
       <div class="main-content">
-        <div class="about-game-left">
+        <div class="game-left">
           <div class="game-label">Game Image</div>
         </div>
-        <div class="about-game-center">
+        <div class="game-center">
           <div class="game-label">Game Image</div>
         </div>
-        <div class="about-game-right">
+        <div class="game-right">
           <div class="game-label">Game Image</div>
         </div>
       </div>
@@ -164,6 +214,7 @@ body, html, #app {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .button-a {
@@ -199,9 +250,9 @@ body, html, #app {
   font-size: x-large;
 }
 
-/* About Page Boxes */
+/* Game Boxes */
 
-.about-game-left, .about-game-center, .about-game-right {
+.game-left, .game-center, .game-right {
   background: #dcdcdc;
   color: black;
   padding: 20px;
@@ -212,15 +263,17 @@ body, html, #app {
   flex-direction: column;
 }
 
-.about-game-left, .about-game-right {
+.game-left, .game-right {
   width: 75px;
   height: 25px;
 }
 
-.about-game-center {
+.game-center {
   width: 200px;
   height: 100px;
 }
+
+
 
 .play {
   background: #C42577;
@@ -280,4 +333,62 @@ body, html, #app {
   font-size: xx-large;
   text-align: center;
 }
+
+/* About Page */
+
+.about-page {
+  align-items: center;
+}
+
+.about-back-button {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background-color: #88aaff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #1E1E1E;
+  
+}
+
+.about-content {
+  width: 500px;
+  height: 300px
+}
+
+.about-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px ;
+}
+
+.about-photo {
+  background: #dcdcdc;
+  color: black;
+  padding: 20px;
+  margin: 20px;
+  width:  300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.about-content, .about-photo {
+  padding: 20px;
+  margin: 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about-content-long {
+  width: 800px;
+  height: 150px
+}
+
 </style>
